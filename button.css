@@ -25,8 +25,8 @@
   padding: .75em 1.5em;
   text-align: center;
   text-decoration: none;
-  color: #0a3;
-  border: 2px solid #0a3;
+  color: #64DD17;
+  border: 2px solid #64DD17;
   font-size: 110%;
   display: inline-block;
   border-radius: 0.3em;
@@ -48,9 +48,9 @@
   transition: none;
 }
 .button:hover {
-  background-color: #0a3;
+  background-color: #64DD17;
   color: #fff;
-  border-bottom: 2px solid #073;
+  border-bottom: 2px solid #17A100;
 }
 .button:hover:before {
   -webkit-transform: skewX(-45deg) translateX(13.5em);
