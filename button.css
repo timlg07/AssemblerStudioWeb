@@ -1,59 +1,60 @@
 @-webkit-keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
-  }
+    0% {
+        -webkit-transform: skewY(-45deg) translateX(0);
+                transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+        -webkit-transform: skewY(-45deg) translateX(12.5em);
+                transform: skewY(-45deg) translateX(12.5em);
+    }
 }
 @keyframes sheen {
-  0% {
-    -webkit-transform: skewY(-45deg) translateX(0);
-            transform: skewY(-45deg) translateX(0);
-  }
-  100% {
-    -webkit-transform: skewY(-45deg) translateX(12.5em);
-            transform: skewY(-45deg) translateX(12.5em);
-  }
+    0% {
+        -webkit-transform: skewY(-45deg) translateX(0);
+                transform: skewY(-45deg) translateX(0);
+    }
+    100% {
+        -webkit-transform: skewY(-45deg) translateX(12.5em);
+                transform: skewY(-45deg) translateX(12.5em);
+    }
 }
 
 .button {
-  margin-right: .5em;
-  margin-bottom:.5em;
-  padding: .75em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  color: #64DD17;
-  border: 2px solid #64DD17;
-  font-size: 110%;
-  display: inline-block;
-  border-radius: 0.3em;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
+    margin-right: .5em;
+    margin-bottom:.5em;
+    padding: .75em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    color: #64DD17;
+    border: 2px solid #64DD17;
+    font-size: 110%;
+    display: inline-block;
+    border-radius: 0.3em;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 .button:before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100%;
-  width: 3em;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -4.5em;
-  -webkit-transform: skewX(-45deg) translateX(0);
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    -webkit-transform: skewX(-45deg) translateX(0);
           transform: skewX(-45deg) translateX(0);
-  transition: none;
+    transition: none;
 }
 .button:hover {
-  background-color: #64DD17;
-  color: #fff;
-  border-bottom: 2px solid #17A100;
+    cursor: pointer;
+    background-color: #64DD17;
+    color: #fff;
+    border-bottom: 2px solid #17A100;
 }
 .button:hover:before {
-  -webkit-transform: skewX(-45deg) translateX(13.5em);
-          transform: skewX(-45deg) translateX(13.5em);
-  transition: all 0.5s ease-in-out;
+    -webkit-transform: skewX(-45deg) translateX(13.5em);
+            transform: skewX(-45deg) translateX(13.5em);
+    transition: all 0.5s ease-in-out;
 }
