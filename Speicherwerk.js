@@ -11,7 +11,7 @@ class Speicherwerk {
             this.createTableRow();
         }
         
-        this.focus = false;
+        this.focus = null;
         
     }
     
@@ -23,7 +23,7 @@ class Speicherwerk {
         let ip = document.createElement( 'input' );
         ip.classList.add( 'cell' );
         ip.setAttribute ( 'type','text' );
-        ip.addEventListener( 'focus',this.setFocus )
+        ip.addEventListener( 'focus',this.setFocus.bind(this) )
         td.appendChild  ( ip );
         return td;
         
