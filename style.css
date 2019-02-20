@@ -1,0 +1,131 @@
+/* size and position on large viewports */
+@media (min-width:1000px){
+    
+    #ctrl,#console
+    {
+        float: left;
+        width: 66%;
+        border-right: 2px solid #454;
+        margin-right: 20px;
+        box-sizing: border-box;
+    }
+    #ctrl
+    {
+        height: 80vh;
+    }
+    #console
+    {
+        border-top: 2px solid #454;
+        height: 20vh;
+    }
+}
+
+#ctrl{
+    margin-left: 16px;
+    margin-top : 16px;
+}
+
+/* scrollbar */
+.scroll{overflow: auto;}
+.scroll::-webkit-scrollbar-track,
+.scroll::-webkit-scrollbar{
+    background: rgba(255,255,255,.08);
+}
+.scroll::-webkit-scrollbar-thumb{
+    background: linear-gradient( 
+        to bottom, 
+        transparent 0%, 
+        transparent 4%, 
+        rgba(255,255,255,.6) 4%, 
+        rgba(255,255,255,.6) 100% 
+    );
+}
+.scroll::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient( 
+        to bottom, 
+        transparent 0%, 
+        transparent 4%, 
+        rgba(255,255,255,.8) 4%, 
+        rgba(255,255,255,.8) 100% 
+    );
+}
+
+
+.cell 
+{
+    margin: 5px 0 5px 0;
+    padding  : 1px 6px;
+    min-width:  6ch;
+    max-width: 12ch;
+    height   :  2em;
+}
+#cnt
+{
+        width:  4ch;
+    min-width:  4ch;
+}
+
+input:not([type='checkbox'])
+{
+    background: #787;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 105%;
+}
+input[type='checkbox']
+{
+    margin-right: 3ch;
+    padding : 5px;
+    width   : 1.6em;
+    height  : 1.6em;
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+label
+{
+    font-size: 120%;
+    padding: 5px 0;
+}
+label.title
+{
+    font-weight: bolder;
+    padding-left: 0;
+    width: 16ch;
+    color: beige;
+/*    color: #000;*/
+}
+label.subtitle
+{
+    color: #7b7;
+/*    color: #555;*/
+}
+
+#befehle
+{
+    margin-bottom : 0px
+}
+#befehle .subtitle
+{
+    width: 14ch;
+}
+
+
+.button
+{
+    width: 2.4em;
+    height:1.2em;
+    font-size: 106%;
+}
+
+body,html
+{
+    margin:0;
+    font-family: monospace;
+    background-color: #000;/*
+    background-color: #fff;*/
+            color: #0a3;
+     border-color: #0a3;
+    outline-color: #fff;
+}
