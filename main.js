@@ -1,6 +1,6 @@
 //Number.MAX_SAFE_INTEGER/*9 Billiarden*/
 
-var $console;
+var $console, $storage;
 
 function main(){
     
@@ -14,5 +14,7 @@ function main(){
             $console.log("This is reserved for automatic interaction only","orange");
         })
     );
+    
+    $storage = new Speicherwerk();
     
 }
