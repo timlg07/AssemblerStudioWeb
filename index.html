@@ -9,6 +9,7 @@
         <script src="main.js"></script>
         <script src="Console.js"></script>
         <script src="Speicherwerk.js"></script>
+        <script src="Registermaschine.js"></script>
         <script>window.onload=main;</script>
         <title>A$$EMBLER</title>
     </head>
@@ -26,21 +27,21 @@
             
             <div class="hBox" id="statusregister">
                 <label class=   "title">Statusregister </label>
-                <label class="subtitle">Negative-Flag: </label><input type="checkbox">
-                <label class="subtitle">Zero-Flag:     </label><input type="checkbox" class="oai">
-                <label class="subtitle">Overflow-Flag: </label><input type="checkbox" class="oai">
+                <label class="subtitle">Negative-Flag: </label><input type="checkbox" id="nFlag">
+                <label class="subtitle">Zero-Flag:     </label><input type="checkbox" id="zFlag" class="oai">
+                <label class="subtitle">Overflow-Flag: </label><input type="checkbox" id="oFlag" class="oai">
             </div>
             
             <div class="hBox" id="akkumulator">
                 <label class="title">Akkumulator</label>
-                <input type="number" class="cell" id="akk">
+                <input type="number" class="cell" id="akk" value="0">
             </div>
             
             <div class="vSpace"></div>
             
             <div class="hBox" id="befehlszähler">
                 <label class="title">Befehlszähler</label>
-                <input type="number" class="cell" id="cnt">
+                <input type="number" class="cell" id="cnt" value="0">
             </div>
             <div class="hBox" id="befehlsregister">
                 <label class="title">Befehlsregister</label>
