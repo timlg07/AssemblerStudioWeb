@@ -25,7 +25,7 @@ class Speicherwerk {
         ip.setAttribute ( 'type','text' );
         ip.addEventListener( 'focus',this.setFocus.bind(this) )
         td.appendChild  ( ip );
-        return td;
+        return {td:td,ip:ip};
         
     }
     
@@ -42,14 +42,14 @@ class Speicherwerk {
         let cellA = this._createCell();
         let cellB = this._createCell();
         
-        cellA.setAttribute( 'id','SZ_'+(this.speicherZellen.length+1) );
-        cellB.setAttribute( 'id','SZ_'+(this.speicherZellen.length+2) );
+        cellA.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+1) );
+        cellB.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+2) );
         
-        tr.appendChild( cellA );
-        tr.appendChild( cellB );
+        tr.appendChild( cellA.td );
+        tr.appendChild( cellB.td );
         
-        this.speicherZellen.push( cellA );
-        this.speicherZellen.push( cellB );
+        this.speicherZellen.push( cellA.ip );
+        this.speicherZellen.push( cellB.ip );
         
         this.tbody.appendChild( tr );
         
