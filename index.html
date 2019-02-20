@@ -9,11 +9,75 @@
     </head>
     <body>
         <div id="ctrl" class="scroll">
+            
             <div class="hBox" id="buttonBarTop">
                 <a id="b1" class="button">RUN</a>
                 <a id="b2" class="button">HOLD</a>
                 <a id="b3" class="button">STEP</a>
                 <a id="b4" class="button">RESET</a>
+            </div>
+            
+            <span class="vSpace"></span>
+            
+            <div class="hBox" id="statusregister">
+                <label class=   "title">Statusregister </label>
+                <label class="subtitle">Negative-Flag: </label><input type="checkbox">
+                <label class="subtitle">Zero-Flag:     </label><input type="checkbox" class="oai">
+                <label class="subtitle">Overflow-Flag: </label><input type="checkbox" class="oai">
+            </div>
+            
+            <div class="hBox" id="akkumulator">
+                <label class="title">Akkumulator</label>
+                <input type="number" class="cell">
+            </div>
+            
+            <span class="vSpace"></span>
+            
+            <div class="hBox" id="befehlszähler">
+                <label class="title">Befehlszähler</label>
+                <input type="number" class="cell" id="cnt">
+            </div>
+            <div class="hBox" id="befehlsregister">
+                <label class="title">Befehlsregister</label>
+                <input type="text" class="cell" id="cmd">
+            </div>
+            
+            <span class="vSpace"></span>
+            
+            <div class="hBox" id="Befehle">
+                <label class="title">Befehle</label>
+                <div class="vBox">
+                    <div class="hBox" id="transportbefehle">
+                        <label class="subtitle">Transportbefehle</label><span class="hSpace"></span>
+                        <a id="LOAD"  href="#" class="cmd button">LOAD </a>
+                        <a id="LOADI" href="#" class="cmd button">LOADI</a>
+                        <a id="STORE" href="#" class="cmd button">STORE</a>
+                    </div>
+                    <div class="hBox" id="arithmetischeBefehle">
+                        <label class="subtitle">Arithmetische Befehle</label><span class="hSpace"></span>
+                        <a id="ADD"   href="#" class="cmd button">ADD </a>
+                        <a id="ADDI"  href="#" class="cmd button">ADDI</a>
+                        <a id="SUB"   href="#" class="cmd button">SUB </a>
+                        <a id="SUBI"  href="#" class="cmd button">SUBI</a><!--
+                    </div><div class="hBox" id="math_cmds_2">
+                        <label class="subtitle"></label><span class="hSpace"></span-->
+                        <a id="MUL"   href="#" class="cmd button">MUL </a>
+                        <a id="MULI"  href="#" class="cmd button">MULI</a>
+                        <a id="DIV"   href="#" class="cmd button">DIV </a>
+                        <a id="DIVI"  href="#" class="cmd button">DIVI</a>
+                    </div>
+                    <div class="hBox" id="Sprungbefehle">
+                        <label class="subtitle">Sprungbefehle</label><span class="hSpace"></span>
+                        <a id="JUMP"  href="#" class="cmd button">JUMP </a>
+                        <a id="JUMPZ" href="#" class="cmd button">JUMPZ</a>
+                        <a id="JUMPN" href="#" class="cmd button">JUMPN</a>
+                        <a id="JUMPP" href="#" class="cmd button">JUMPP</a>
+                    </div>
+                    <div class="hBox" id="sonstigeBefehle">
+                        <label class="subtitle">Sonstige Befehle</label><span class="hSpace"></span>
+                        <a id="HOLD"  href="#" class="cmd button">HOLD </a>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
