@@ -23,7 +23,7 @@ class Speicherwerk {
     
     
     // @method creates a new table row (which consists of two cells) and adds it to the table.
-    createTableRow( ){
+    createTableRow( autoScroll ){
         
         let tr = document.createElement( 'tr' );
         let td = document.createElement( 'td' );
@@ -44,6 +44,8 @@ class Speicherwerk {
         this.speicherZellen.push( cellB );
         
         this.tbody.appendChild( tr );
+        
+        if( autoScroll ){ this.table.parentElement.scrollTop = this.table.parentElement.scrollHeight; }
         
     }
     
