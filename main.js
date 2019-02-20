@@ -1,6 +1,4 @@
-//Number.MAX_SAFE_INTEGER/*9 Billiarden*/
-
-var $console, $storage, $machine;
+var $console, $storage, $machine, $delay = 100;
 
 function main(){
     
