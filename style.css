@@ -15,14 +15,15 @@
     }
     #console
     {
+        padding-left: 16px;
         border-top: 2px solid #454;
         height: 20vh;
     }
 }
 
 #ctrl{
-    margin-left: 16px;
-    margin-top : 16px;
+    padding-left: 16px;
+    padding-top : 16px;
 }
 
 /* scrollbar */
@@ -67,10 +68,18 @@
 
 input:not([type='checkbox'])
 {
-    background: #787;
-    border: none;
+    background: #555;
+    color: beige;
     border-radius: 0.3em;
     font-size: 105%;
+    
+    outline: none;
+    border : 1.4px solid transparent;
+    transition: border 312ms;
+}
+input:not([type='checkbox']):focus
+{
+    border-color: #64DD17;
 }
 input[type='checkbox']
 {
@@ -98,7 +107,7 @@ label.title
 }
 label.subtitle
 {
-    color: #7b7;
+    color: #aba;
 /*    color: #555;*/
 }
 
