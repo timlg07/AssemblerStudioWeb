@@ -31,6 +31,11 @@
     margin-left: 1.6em;
 }
 
+/*Insert vertical space*/
+.vSpace {
+    margin-top: 1.6em;
+}
+
 /*Stretch item along parent's cross-axis Overrides any cross-* class of parent*/
 .stretch-self {
     align-self: stretch;
