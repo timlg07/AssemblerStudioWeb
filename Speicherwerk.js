@@ -45,7 +45,10 @@ class Speicherwerk {
         
         this.tbody.appendChild( tr );
         
-        if( autoScroll ){ this.table.parentElement.scrollTop = this.table.parentElement.scrollHeight; }
+        if( autoScroll ){ 
+            this.table.parentElement.scrollTop = this.table.parentElement.scrollHeight; 
+            $console.log( 'New cells added.' )
+        }
         
     }
     
