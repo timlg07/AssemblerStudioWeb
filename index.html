@@ -81,5 +81,47 @@
                 </div>
             </div>
         </div>
+        <div class="hBox">
+            <table style="
+                font-size: 116%;      
+            ">
+                <thead>
+                    <th style="max-width:2em" title="Speicheradresse">SA</th>
+                    <th>Zelle A</th>
+                    <th>Zelle B</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><input class="cell storage" type="text"></td>
+                        <td><input class="cell storage" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input class="cell storage" type="text"></td>
+                        <td><input class="cell storage" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><input class="cell storage" type="text"></td>
+                        <td><input class="cell storage" type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="console" class="scroll"></div>
+        <script>
+            //console-script
+            $console = {
+                element: document.getElementById("console"),
+                log    : (t,c)=>{
+                    $console.element.innerHTML+=`<span style="color:${c||'#000'}">${t}</span><br>`;
+                    $console.element.scrollTop = $console.element.scrollHeight;
+                }
+            }
+            
+            //only-automatic-interaction-script
+            document.querySelectorAll(".oai").forEach(o=>o.addEventListener('click',e=>{e.preventDefault();$console.log("This is reserved for automatic interaction only","orange")}))
+        </script>
     </body>
 </html>
