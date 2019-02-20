@@ -1,6 +1,7 @@
 class Speicherwerk {
     
     constructor( cells = 40, table = document.querySelector('#speicher table') ){
+        
         this.table = table;
         this.tbody = document.createElement( 'tbody' );
         this.table.appendChild( this.tbody );
@@ -8,17 +9,24 @@ class Speicherwerk {
         
         while( this.speicherZellen.length < cells ){
             this.createTableRow();
-        }        
+        }
+        
+        this.focus = false;
+        
     }
+    
     
     // @return {HTML-Element:td} new cell
     _createCell( ){
+        
         let td = document.createElement( 'td' );
         let ip = document.createElement( 'input' );
         ip.classList.add( 'cell' );
         ip.setAttribute ( 'type','text' );
+        ip.addEventListener( 'focus',this.setFocus )
         td.appendChild  ( ip );
         return td;
+        
     }
     
     
@@ -50,6 +58,11 @@ class Speicherwerk {
             $console.log( 'New cells added.' )
         }
         
+    }
+    
+    // @method gets called if a cell is focussed
+    setFocus( e ){
+        this.focus = e.target;
     }
     
 }
