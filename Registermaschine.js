@@ -78,10 +78,18 @@ class Registermaschine {
     }
     
     fetch( ){
-        this.elements.befehls_reg.value = $storage.speicherZellen[this.elements.befehls_cnt.value-1].value||0;
+        if( this.elements.befehls_cnt.value > $storage.speicherZellen.length ){
+            $console.log( `Error while fetching operator: cell ${this.elements.befehls_cnt.value} does not exist.`,'red');
+            this.isRunning = false;
+        }
+        this.elements.befehls_reg.value = $storage.speicherZellen[this.elements.befehls_cnt.value-1].value||'';
     }
     
     fetchOperand( ){
+        if( this.elements.befehls_cnt.value+1 > $storage.speicherZellen.length ){
+            $console.log( `Error while fetching operand: cell ${this.elements.befehls_cnt.value+1} does not exist.`,'red');
+            this.isRunning = false;
+        }
         this.operand = $storage.speicherZellen[this.elements.befehls_cnt.value].value||0;
     }
     
@@ -151,6 +159,9 @@ class Registermaschine {
             case 'HOLD':
                 this.hold( false );
                 break;
+            case '':
+                $console.log( 'no command.','orange' );
+                break;
             default:
                 $console.log( `SyntaxError: Command ${this.elements.befehls_reg.value} does not exist`,'red' );
                 break;
@@ -159,7 +170,7 @@ class Registermaschine {
     
     loadOperandValue( ){
         
-        if( this.operand > $storage.speicherZellen.length ){
+        if( this.operand > $storage.speicherZellen.length || this.operand == 0 ){
             $console.log( `Error while loading operand: cell ${this.operand} does not exist.`,'red');
             this.isRunning = false;
         }
