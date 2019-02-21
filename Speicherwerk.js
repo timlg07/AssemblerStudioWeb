@@ -44,6 +44,8 @@ class Speicherwerk {
         
         cellA.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+1) );
         cellB.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+2) );
+        cellA.td.setAttribute( 'title','Speicheradresse: '+(this.speicherZellen.length+1) );
+        cellB.td.setAttribute( 'title','Speicheradresse: '+(this.speicherZellen.length+2) );
         
         tr.appendChild( cellA.td );
         tr.appendChild( cellB.td );
