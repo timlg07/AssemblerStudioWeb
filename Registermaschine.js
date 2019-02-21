@@ -78,7 +78,7 @@ class Registermaschine {
     }
     
     fetch( ){
-        if( this.elements.befehls_cnt.value > $storage.speicherZellen.length ){
+        if( this.elements.befehls_cnt.value > $storage.speicherZellen.length || this.elements.befehls_cnt.value <= 0 ){
             $console.log( `Error while fetching operator: cell ${this.elements.befehls_cnt.value} does not exist.`,'red');
             this.isRunning = false;
         }
@@ -90,7 +90,13 @@ class Registermaschine {
             $console.log( `Error while fetching operand: cell ${this.elements.befehls_cnt.value+1} does not exist.`,'red');
             this.isRunning = false;
         }
-        this.operand = $storage.speicherZellen[this.elements.befehls_cnt.value].value||0;
+        
+        this.operand = Number.parseInt($storage.speicherZellen[this.elements.befehls_cnt.value].value||0);
+        
+        if( Number.isNaN(this.operand) ){
+            $console.log( `Error while fetching operand; NaN: ${$storage.speicherZellen[this.elements.befehls_cnt.value].value} is not a Number.`,'red');
+            this.isRunning = false;
+        }
     }
     
     execute( ){
@@ -213,7 +219,7 @@ class Registermaschine {
         
         this.elements.flags.negative.checked = value   < 0;
         this.elements.flags.zero    .checked = value === 0;
-        this.elements.flags.overflow.checked = Math.abs(value) > Math.pow(2,64);
+        this.elements.flags.overflow.checked = Math.abs(value) > Math.pow(2,64)-1;
         
         this.elements.akkumulator.value = Math.floor( Math.abs( value ));
         
