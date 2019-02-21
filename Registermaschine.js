@@ -86,8 +86,8 @@ class Registermaschine {
     }
     
     fetchOperand( ){
-        if( this.elements.befehls_cnt.value+1 > $storage.speicherZellen.length ){
-            $console.log( `Error while fetching operand: cell ${this.elements.befehls_cnt.value+1} does not exist.`,'red');
+        if( this.elements.befehls_cnt.value-(-1) > $storage.speicherZellen.length ){
+            $console.log( `Error while fetching operand: cell ${this.elements.befehls_cnt.value-(-1)} does not exist.`,'red');
             this.isRunning = false;
         }
         
