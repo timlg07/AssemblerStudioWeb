@@ -170,7 +170,7 @@ class Registermaschine {
     
     loadOperandValue( ){
         
-        if( this.operand > $storage.speicherZellen.length || this.operand == 0 ){
+        if( this.operand > $storage.speicherZellen.length || this.operand <= 0 ){
             $console.log( `Error while loading operand: cell ${this.operand} does not exist.`,'red');
             this.isRunning = false;
         }
