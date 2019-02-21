@@ -219,7 +219,7 @@ class Registermaschine {
         
         this.elements.flags.negative.checked = value   < 0;
         this.elements.flags.zero    .checked = value === 0;
-        this.elements.flags.overflow.checked = Math.abs(value) > Math.pow(2,64)-1;
+        this.elements.flags.overflow.checked = Math.abs(value) > Number.MAX_SAFE_INTEGER;
         
         this.elements.akkumulator.value = Math.floor( Math.abs( value ));
         
