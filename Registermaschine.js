@@ -100,7 +100,7 @@ class Registermaschine {
     }
     
     execute( ){
-        switch(this.elements.befehls_reg.value){
+        switch(this.elements.befehls_reg.value.toUpperCase()){
             case 'LOAD':
                 this.loadOperandValue();
             case 'LOADI':
