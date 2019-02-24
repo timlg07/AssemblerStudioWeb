@@ -47,7 +47,10 @@ class Registermaschine {
             let i = $storage.speicherZellen.indexOf($storage.focus);
             
             let focus = $storage.focus;
-            if( i%2 != 0 && i != -1 && i+1 < $storage.speicherZellen.length){
+            if( i%2 != 0 && i != -1 ){
+                if( i+1 >= $storage.speicherZellen.length ){
+                    $storage.createTableRow();
+                }
                 focus = $storage.speicherZellen[++i];
             }
             
