@@ -25,12 +25,19 @@
         height: 100vh;
         float : right;
     }
-    #speicher > table
-    {
-        
-    }
 }
 
+#speicher > table
+{
+    font-size:116%;
+    margin:2em auto;
+}
+#speicher > a
+{
+    min-width:12ch;
+    min-height:1.2em;
+    margin:0 auto 2em auto;
+}
 #ctrl{
     padding-left: 16px;
     padding-top : 16px;
