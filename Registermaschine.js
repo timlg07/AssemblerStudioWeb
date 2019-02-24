@@ -44,8 +44,20 @@ class Registermaschine {
     
     handleCmdInput( e ){
         if( $storage.focus ){
-            $storage.focus.value = e.target.getAttribute('id');
-            $storage.focus.focus();
+            let i = $storage.speicherZellen.indexOf($storage.focus);
+            
+            let focus = $storage.focus;
+            if( i%2 != 0 && i != -1 && i+1 < $storage.speicherZellen.length){
+                focus = $storage.speicherZellen[++i];
+            }
+            
+            focus.value = e.target.getAttribute('id');
+            
+            if( i == -1 || i+1 >= $storage.speicherZellen.length ){
+                focus.focus();
+            } else {
+                $storage.speicherZellen[++i].focus();
+            }
         }
     }
         
