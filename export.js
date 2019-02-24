@@ -19,7 +19,7 @@ function download(data, filename, type) {
 
 function export_(){
     let type = "text/plain;charset=utf-8",
-        text = $storage.speicherZellen.map((o,i)=>o.value+((i%2==0)?" ":"\n")).join(""),
+        text = $storage.speicherZellen.map((o,i)=>(o.value||0)+((i%2==0)?" ":"\n")).join(""),
         file = "assembler_export_"+Date.now();
     download(text,file,type);
 }
