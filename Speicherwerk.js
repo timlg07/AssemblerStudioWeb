@@ -67,4 +67,9 @@ class Speicherwerk {
         this.focus = e.target;
     }
     
+    // @param {Array<String>} The new values of each cell
+    set speicher( array ){
+        this.speicherZellen.forEach((o,i)=>o.value=array[i]);
+    }
+    
 }
