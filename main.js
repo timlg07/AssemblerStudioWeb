@@ -14,4 +14,7 @@ function main(){
         })
     );
     
+    // import feature
+    document.getElementById('files').addEventListener('change', handleFileSelect);
+    
 }
