@@ -1,16 +1,30 @@
 <input type="file" id="files" name="files[]" />
-<output id="list"></output>
+<output id="output"></output>
 
 <script>
-    function handleFileSelect(evt) {
-        var file  = evt.target.files[0],
-            output= document.getElementById('list');
-        if( file ){
-            output.innerHTML = '<li><strong>'+ escape(file.name)+ '</strong> ('+ (file.type || 'n/a)') + ') </li>';
-        } else {
-            output.innerHTML = "<li>no file selected.</li>"
-        }
+    
+    function readFile( file ){
+        
+        let reader = new FileReader();
+        reader.onload = function( evt ){
+            output.innerText = evt.target.result;
+        };
+        reader.readAsText(file);
+        
     }
-
+    
+    function handleFileSelect( evt ){
+        
+        var file  = evt.target.files[0];
+        if( file ){
+            readFile( file );
+        } else {
+            output.innerHTML = "no file selected."
+        }
+        
+    }
+    
+    var output= document.getElementById('output');
     document.getElementById('files').addEventListener('change', handleFileSelect);
+    
 </script>
