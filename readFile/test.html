@@ -17,11 +17,12 @@
         
         var file  = evt.target.files[0];
         if( file ){
-        if( file.type.match( "text/plain" )){
-            readFile( file );
+            if( file.type.match( "text/plain" )){
+                readFile( file );
+            } else {
+                output.innerHTML = "The file has to be a plain text file."
+            }
         } else {
-            output.innerHTML = "The file has to be a plain text file."
-        }} else {
             output.innerHTML = "No file selected."
         }
         
