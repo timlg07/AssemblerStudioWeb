@@ -1,3 +1,4 @@
+// (@param {Event} Gets passed by the listener)
 function handleFileSelect( evt ){
     
     var file  = evt.target.files[0];
@@ -13,6 +14,7 @@ function handleFileSelect( evt ){
     
 }    
 
+// @param {File} The file which should be loaded
 function readFile( file ){
     
     let reader = new FileReader();
@@ -23,7 +25,13 @@ function readFile( file ){
     
 }
 
-
+// @param {String} The text of the text file with all values
 function import_( text ){
-    $console.log( text );
+    
+    let new_cells = text.split( /[\r\n ]+/ ).filter(v=>v!="");
+    while( $storage.speicherZellen.length < new_cells ){
+        $storage.createTableRow();
+    }
+    $storage.speicher = new_cells.map(v=>(v==0?"":v));
+    
 }
