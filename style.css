@@ -6,7 +6,6 @@
         float: left;
         width: 66vw;
         border-right: 2px solid #454;
-        margin-right: 20px;
         box-sizing: border-box;
     }
     #ctrl
@@ -21,7 +20,7 @@
     }
     #speicher
     {
-        width :  30vw;
+        width :  32vw;
         height: 100vh;
         float : right;
     }
@@ -107,6 +106,15 @@ input[type='checkbox']
     -webkit-appearance: checkbox;
     box-sizing: border-box;
     display: inline-block;
+}
+input[type='file']
+{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 30px;
+    background: transparent;
+    border: 2px solid #64DD17;
+    padding:8px;
 }
 
 label
