@@ -17,4 +17,31 @@ function main(){
     // import feature
     document.getElementById('files').addEventListener('change', handleFileSelect);
     
+    // command description
+    add_descriptions();
+}
+
+
+function add_descriptions( ){
+    let descriptions = {
+        "LOAD" :"Laden eines Wertes aus einer Speicherzelle in den Akkumulator",
+        "LOADI":"Direktes Laden eines Wertes in den Akkumulator",
+        "STORE":"Schreiben des Akkumulatorwertes in eine Speicherzelle",
+        "ADD"  :"Der Wert einer Speicherzelle wird auf den Akkumulatorwert addiert",
+        "ADDI" :"Ein direkt definierter Wert wird auf den Akkumulatorwert addiert",
+        "SUB"  :"Der Wert einer Speicherzelle wird vom Akkumulatorwert subtrahiert",
+        "SUBI" :"Ein direkt definierter Wert wird vom Akkumulatorwert subtrahiert",
+        "MUL"  :"Der Akkumulatorwert wird um den Wert einer Speicherzelle vervielfacht",        
+        "MULI" :"Der Akkumulatorwert wird um einen direkt definierten Wert vervielfacht",  
+        "DIV"  :"Der Akkumulatorwert wird durch den Wert einer Speicherzelle dividiert",
+        "DIVI" :"Der Akkumulatorwert wird durch einen direkt definierten Wert dividiert",
+        "JUMP" :"Definiert die Speicheradresse des nächsten auszuführenden Befehl",
+        "JUMPZ":"Definiert die Speicheradresse des nächsten auszuführenden Befehl, wenn der Akkumulator 0 ist",
+        "JUMPP":"Definiert die Speicheradresse des nächsten auszuführenden Befehl, wenn der Akkumulator positiv ist",
+        "JUMPN":"Definiert die Speicheradresse des nächsten auszuführenden Befehl, wenn der Akkumulator negativ ist",
+        "HOLD" :"Beendet die Programmabarbeitung"
+    }
+    document.querySelectorAll( '.cmd' ).forEach(o=>{
+        o.setAttribute( 'title',descriptions[o.getAttribute('id')] );
+    });
 }
