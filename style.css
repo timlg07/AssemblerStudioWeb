@@ -163,3 +163,7 @@ body,html
      border-color: #0a3;
     outline-color: #fff;
 }
+
+a         { color: #77BB44; }
+a:visited { color: #A0BF74; }
+a:hover   { color: #64DD17; text-decoration: none;}
