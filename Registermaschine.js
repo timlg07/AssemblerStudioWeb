@@ -119,7 +119,7 @@ class Registermaschine {
             case 'LOAD':
                 this.loadOperandValue();
             case 'LOADI':
-                this.akkumulator = this.operand;
+                this.loadAkkumulator = this.operand;
                 $console.log( 'LOADED: '+this.operand );
                 break;
                 
@@ -131,7 +131,7 @@ class Registermaschine {
             case 'ADD':
                 this.loadOperandValue();
             case 'ADDI':
-                this.akkumulator += this.operand;
+                this.akkumulator -=- this.operand; // `+` causes String addition
                 $console.log( 'ADDED: '+this.operand );
                 break;
             
@@ -236,14 +236,28 @@ class Registermaschine {
         this.elements.flags.zero    .checked = value === 0;
         this.elements.flags.overflow.checked = Math.abs(value) > Number.MAX_SAFE_INTEGER;
         
-        this.elements.akkumulator.value = Math.floor( Math.abs( value ));
+        //this.elements.akkumulator.value = Math.floor( Math.abs( value ));
+        this.elements.akkumulator.value = Math.floor( value );
+        
+    }
+    
+    set loadAkkumulator( value ){
+        
+        if( Number.isNaN(Number.parseInt(value)) ){
+            $console.log( `Error while setting the "Akkumulator"; NaN: ${value} is not a Number.`,'red' );
+            this.isRunning = false;
+            return;
+        }
+        
+        this.elements.akkumulator.value = Math.floor( value );
         
     }
     
     
     get akkumulator( ){
         
-        return (this.elements.flags.negative.checked?-1:1) * this.elements.akkumulator.value;
+        //return (this.elements.flags.negative.checked?-1:1) * this.elements.akkumulator.value;
+        return this.elements.akkumulator.value;
         
     }
 }
