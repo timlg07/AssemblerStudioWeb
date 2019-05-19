@@ -91,4 +91,4 @@ Mit der Exportfunktion, die Sie mit dem Button "Export" unter den Speicherzellen
 
 Um ein exportiertes Programm wieder in den Speicher zu importieren, wählen Sie die zu ladende Datei im Import-Feld aus oder ziehen Sie die Datei auf dieses Feld.
 
-Einige Beispielprogramme, die Sie importieren können, sind bereits im [example](/example) Ordner enthalten.
+Einige Beispielprogramme, die Sie importieren können, sind bereits im [examples](/examples) Ordner enthalten.
