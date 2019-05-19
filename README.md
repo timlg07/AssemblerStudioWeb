@@ -18,7 +18,7 @@ Die fünf Grundeinheiten des Rechners:
 - Ausgabewerk: gibt Daten aus dem Speicher nach außen
 
 ## 2. Aufbau einer einfachen Registermaschine
-Die Zentraleinheit einer Registermaschine besteht neben Rechen- und Steuerwerk aus folgenden Registern: 
+Die Zentraleinheit einer Registermaschine besteht neben Rechen- und Steuerwerk aus folgenden Registern:  
 (Register = schnelle Hilfsspeicherzelle)
 
 - Akkumulator: Register zum Speichern einer Ganzzahl
@@ -64,11 +64,11 @@ Die Befehle, die im ASW in vier Kategorien unterteilt sind, werden im Folgenden 
 
 Die Abarbeitung der einzelnen Befehle orientiert sich an einem festen Schema, das für jeden Befehl wiederholt wird, bis das Programm durch `hold` beendet wird. Die dafür typischen Schritte werden auch vom ASW ausgeführt.
 
-Fetch: Der Operator wird aus dem Speicher geholt
-Decode: Der Operator wird decodiert
-Fetch Operand: Der Operand wird aus dem SPeicher geholt
-Execute: Der Befehl wird ausgeführt
-Update Instruction Pointer: Der Befehlszähler wird erhöht
+1. Fetch: Der Operator wird aus dem Speicher geholt
+2. Decode: Der Operator wird decodiert
+3. Fetch Operand: Der Operand wird aus dem SPeicher geholt
+4. Execute: Der Befehl wird ausgeführt
+5. Update Instruction Pointer: Der Befehlszähler wird erhöht
 
 ## 5. Assemblerprogramme im ASW
 ### 5.1 Schreiben
@@ -91,4 +91,4 @@ Mit der Exportfunktion, die Sie mit dem Button "Export" unter den Speicherzellen
 
 Um ein exportiertes Programm wieder in den Speicher zu importieren, wählen Sie die zu ladende Datei im Import-Feld aus oder ziehen Sie die Datei auf dieses Feld.
 
-Einige Beispielprogramme, die Sie importieren können, sind bereits im example Ordner (auf GitHub) enthalten.
+Einige Beispielprogramme, die Sie importieren können, sind bereits im [example](/example) Ordner enthalten.
