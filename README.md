@@ -28,6 +28,7 @@ Die Zentraleinheit einer Registermaschine besteht neben Rechen- und Steuerwerk a
     - N-Flag: Wert der letzten Rechenoperation war negativ
     - Z-Flag: Wert der letzten Rechenoperation war Null (zero)
     - O-Flag: Ein Überlauf (overflow) ist aufgetreten (=Ergebnis zu groß für den Speicherplatz)  
+
 Diese vier Register sind auch im AssemblerStudioWeb vorhanden und auf der linken Seite oben zu finden. Sie werden, ihrer eben beschriebenen Funktion gemäß, vom ASW (AssemblerStudioWeb) automatisch gesetzt, können aber teilweise auch manuell bearbeitet werden.
 
 
@@ -66,7 +67,7 @@ Die Abarbeitung der einzelnen Befehle orientiert sich an einem festen Schema, da
 
 1. Fetch: Der Operator wird aus dem Speicher geholt
 2. Decode: Der Operator wird decodiert
-3. Fetch Operand: Der Operand wird aus dem SPeicher geholt
+3. Fetch Operand: Der Operand wird aus dem Speicher geholt
 4. Execute: Der Befehl wird ausgeführt
 5. Update Instruction Pointer: Der Befehlszähler wird erhöht
 
