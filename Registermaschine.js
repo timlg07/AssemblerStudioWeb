@@ -181,7 +181,9 @@ class Registermaschine {
                 this.hold( false );
                 break;
             case '':
-                $console.log( 'no command.','orange' );
+            case '0':
+            case 'NOOP':
+                $console.log( 'No operation.' );
                 break;
             default:
                 $console.log( `SyntaxError: Command ${this.elements.befehls_reg.value} does not exist`,'red' );
