@@ -23,6 +23,7 @@ class Speicherwerk {
         let ip = document.createElement( 'input' );
         ip.classList.add( 'cell' );
         ip.setAttribute ( 'type','text' );
+        ip.setAttribute ( 'placeholder','0' );
         ip.addEventListener( 'focus',this.setFocus.bind(this) )
         td.appendChild  ( ip );
         return {td:td,ip:ip};
