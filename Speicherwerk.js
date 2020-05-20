@@ -79,7 +79,7 @@ class Speicherwerk {
     }
     
     /**
-     * Sets the content of the cells.
+     * Sets the content of the cells. Does not modify the amount of cells.
      * 
      * @param {Array} newCellValues The new values of each cell as Strings.
      */
