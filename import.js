@@ -42,6 +42,6 @@ function import_(text, name) {
     while ($storage.speicherZellen.length < new_cells) {
         $storage.createTableRow();
     }
-    $storage.speicher = new_cells.map(v => v == 0 ? "" : v);
+    $storage.content = new_cells.map(v => v == 0 ? "" : v);
     $console.log(`Imported ${encodeURI(name)}`, "#64DD17");
 }

@@ -1,76 +1,90 @@
 class Speicherwerk {
     
-    constructor( cells = 40, table = document.querySelector('#speicher table') ){
-        
+    constructor(cells = 40, table = document.querySelector('#speicher table')) {
         this.table = table;
-        this.tbody = document.createElement( 'tbody' );
-        this.table.appendChild( this.tbody );
+        this.tbody = document.createElement('tbody');
+        this.table.appendChild(this.tbody);
         this.speicherZellen = [];
         
-        while( this.speicherZellen.length < cells ){
+        while (this.speicherZellen.length < cells) {
             this.createTableRow();
         }
         
         this.focus = null;
-        
     }
     
     
-    // @return {HTML-Element:td} new cell
-    _createCell( ){
-        
-        let td = document.createElement( 'td' );
-        let ip = document.createElement( 'input' );
-        ip.classList.add( 'cell' );
-        ip.setAttribute ( 'type','text' );
-        ip.setAttribute ( 'placeholder','0' );
-        ip.addEventListener( 'focus',this.setFocus.bind(this) )
-        td.appendChild  ( ip );
+    /**
+     * Creates a new cell that can be added to the storage.
+     * 
+     * @return {Object} The new cells td and input element.
+     */
+    _createCell( ) {
+        let td = document.createElement('td');
+        let ip = document.createElement('input');
+        ip.classList.add('cell');
+        ip.setAttribute('type', 'text');
+        ip.setAttribute('placeholder', '0');
+        ip.addEventListener('focus', this.setFocus.bind(this))
+        td.appendChild(ip);
         return {td:td,ip:ip};
-        
     }
     
     
-    // @method creates a new table row (which consists of two cells) and adds it to the table.
-    createTableRow( autoScroll ){
+    /** 
+     * Creates a new table row (which consists of two cells) and adds it to the 
+     * table.
+     * 
+     * @param {boolean} autoScroll Scrolls to the bottom if the user triggered
+     *        the creation of a new table row.
+     */
+    createTableRow(autoScroll) {
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        let cellIndex = this.speicherZellen.length + 1;
         
-        let tr = document.createElement( 'tr' );
-        let td = document.createElement( 'td' );
-        
-        td.innerText = this.speicherZellen.length+1;
-        tr.appendChild( td );
+        td.innerText = cellIndex;
+        tr.appendChild(td);
         
         let cellA = this._createCell();
         let cellB = this._createCell();
         
-        cellA.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+1) );
-        cellB.td.setAttribute( 'id','SZ_'+(this.speicherZellen.length+2) );
-        cellA.td.setAttribute( 'title','Speicheradresse: '+(this.speicherZellen.length+1) );
-        cellB.td.setAttribute( 'title','Speicheradresse: '+(this.speicherZellen.length+2) );
+        cellA.td.setAttribute('id', 'SZ_' + cellIndex);
+        cellB.td.setAttribute('id', 'SZ_' + (cellIndex + 1));
+        cellA.td.setAttribute('title', 'Speicheradresse: ' + cellIndex);
+        cellB.td.setAttribute('title', 'Speicheradresse: ' + (cellIndex + 1));
         
-        tr.appendChild( cellA.td );
-        tr.appendChild( cellB.td );
+        tr.appendChild(cellA.td);
+        tr.appendChild(cellB.td);
         
-        this.speicherZellen.push( cellA.ip );
-        this.speicherZellen.push( cellB.ip );
+        this.speicherZellen.push(cellA.ip);
+        this.speicherZellen.push(cellB.ip);
         
-        this.tbody.appendChild( tr );
+        this.tbody.appendChild(tr);
         
-        if( autoScroll ){ 
-            this.table.parentElement.scrollTop = this.table.parentElement.scrollHeight; 
+        if (autoScroll) { 
+            this.table.parentElement.scrollTop = 
+                    this.table.parentElement.scrollHeight; 
             $console.log( 'New cells added.' )
         }
-        
     }
     
-    // @method gets called if a cell is focussed
-    setFocus( e ){
+    /** 
+     * Gets called if a cell is focussed 
+     * 
+     * @param {Event} e The event with the focussed cell as target.
+     */
+    setFocus(e){
         this.focus = e.target;
     }
     
-    // @param {Array<String>} The new values of each cell
-    set speicher( array ){
-        this.speicherZellen.forEach((o,i)=>o.value=array[i]);
+    /**
+     * Sets the content of the cells.
+     * 
+     * @param {Array} newCellValues The new values of each cell as Strings.
+     */
+    set content(newCellValues) {
+        this.speicherZellen.forEach((o, i) => o.value = newCellValues[i]);
     }
     
 }
