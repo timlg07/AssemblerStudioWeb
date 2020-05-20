@@ -85,9 +85,7 @@ class Speicherwerk {
      */
     set content(newCellValues) {
         this.speicherZellen.forEach((o, i) => {
-            if (newCellValues[i]) {
-                o.value = newCellValues[i]
-            }
+            o.value = newCellValues[i] ? newCellValues[i] : "";
         });
     }
     
