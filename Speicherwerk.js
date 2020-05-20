@@ -84,7 +84,11 @@ class Speicherwerk {
      * @param {Array} newCellValues The new values of each cell as Strings.
      */
     set content(newCellValues) {
-        this.speicherZellen.forEach((o, i) => o.value = newCellValues[i]);
+        this.speicherZellen.forEach((o, i) => {
+            if (newCellValues[i]) {
+                o.value = newCellValues[i]
+            }
+        });
     }
     
 }
