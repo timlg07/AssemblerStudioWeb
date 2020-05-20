@@ -1,5 +1,5 @@
 class Speicherwerk {
-    
+
     constructor(cells = 40, table = document.querySelector('#speicher table')) {
         this.table = table;
         this.tbody = document.createElement('tbody');
@@ -12,14 +12,13 @@ class Speicherwerk {
         
         this.focus = null;
     }
-    
-    
+
     /**
      * Creates a new cell that can be added to the storage.
      * 
      * @return {Object} The new cells td and input element.
      */
-    _createCell( ) {
+    _createCell() {
         let td = document.createElement('td');
         let ip = document.createElement('input');
         ip.classList.add('cell');
@@ -27,10 +26,9 @@ class Speicherwerk {
         ip.setAttribute('placeholder', '0');
         ip.addEventListener('focus', this.setFocus.bind(this))
         td.appendChild(ip);
-        return {td:td,ip:ip};
+        return {td:td, ip:ip};
     }
-    
-    
+
     /** 
      * Creates a new table row (which consists of two cells) and adds it to the 
      * table.
@@ -65,19 +63,19 @@ class Speicherwerk {
         if (autoScroll) { 
             this.table.parentElement.scrollTop = 
                     this.table.parentElement.scrollHeight; 
-            $console.log( 'New cells added.' )
+            $console.log('New cells added.');
         }
     }
-    
+
     /** 
      * Gets called if a cell is focussed 
      * 
      * @param {Event} e The event with the focussed cell as target.
      */
-    setFocus(e){
+    setFocus(e) {
         this.focus = e.target;
     }
-    
+
     /**
      * Sets the content of the cells. Does not modify the amount of cells.
      * 
@@ -88,5 +86,5 @@ class Speicherwerk {
             o.value = newCellValues[i] ? newCellValues[i] : "";
         });
     }
-    
+
 }
