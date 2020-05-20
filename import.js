@@ -4,7 +4,7 @@
  * 
  * @param {Event} evt The event gets passed by the listener
  */ 
-function handleFileSelect( evt ){
+function handleFileSelect(evt) {
     var file = evt.target.files[0];
     if (file) {
         if (file.type.match("text/plain")) {
@@ -22,7 +22,7 @@ function handleFileSelect( evt ){
  * 
  * @param {File} file The file which should be loaded
  */
-function readFile(file){
+function readFile(file) {
     let reader = new FileReader();
     reader.onload = function(evt) {
         import_(evt.target.result, file.name);
