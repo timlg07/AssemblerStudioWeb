@@ -1,41 +1,44 @@
 var $console, $storage, $machine, $delay = 100;
 
-function main(){
-    
+/**
+ * Initializes global variables, adds listeners, tooltips and a welcome message.
+ */
+function main() {
     $console = new Console();
     $storage = new Speicherwerk();
     $machine = new Registermaschine();
-    
+
     // only-automatic-interaction
     document.querySelectorAll(".oai").forEach(
-        o=>o.addEventListener('click',e=>{
+        o => o.addEventListener('click', e => {
             e.preventDefault();
-            $console.log("This is reserved for automatic interaction only","orange");
+            $console.log("This is reserved for automatic interaction only", "orange");
         })
     );
-    
+
     // import feature
     document.getElementById('files').addEventListener('change', handleFileSelect);
-    
+
     // command description
     add_descriptions();
-    
+
     // welcome text
     $console.log("Willkommen im AssemblerStudioWeb! Hier findest du hilfreiche Informationen und Anleitungen:");
     $console.log("<a href=\"intro.html\">Einführung in die Assemblerprogrammierung und Anwendung im AssemblerStudioWeb</a>");
     $console.log("<a href=\"ie.jpg\">Warum wird Internet Explorer nicht unterstützt?</a><br><br>");
-    
+
     // Hide Banner (for online 000webhost-version only)
-    try{
-        document.querySelector( 'img:last-child' ).style.display = "none";
-    }catch(e){
+    try {
+        document.querySelector('img:last-child').style.display = "none";
+    } catch(e) {
         // not necessary
     }
-    
 }
 
-
-function add_descriptions( ){
+/**
+ * Adds description as title of all .cmd Elements.
+ */
+function add_descriptions() {
     let descriptions = {
         "LOAD" : "Laden eines Wertes aus einer Speicherzelle in den Akkumulator",
         "LOADI": "Direktes Laden eines Wertes in den Akkumulator",
@@ -54,7 +57,7 @@ function add_descriptions( ){
         "JUMPN": "Definiert die Speicheradresse des nächsten auszuführenden Befehls, wenn der Akkumulator negativ ist",
         "HOLD" : "Beendet die Programmabarbeitung"
     }
-    document.querySelectorAll( '.cmd' ).forEach(o=>{
-        o.setAttribute( 'title',descriptions[o.getAttribute('id')] );
+    document.querySelectorAll('.cmd').forEach( o=> {
+        o.setAttribute('title', descriptions[o.getAttribute('id')]);
     });
 }
