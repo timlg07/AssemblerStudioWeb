@@ -1,5 +1,5 @@
 # AssemblerStudioWeb
-Run it online: [tim-greller.tk/assembler](http://tim-greller.tk/assembler/)
+Run it online: [tim-greller.de/asw](https://tim-greller.de/asw/)
 
 _______________
 
