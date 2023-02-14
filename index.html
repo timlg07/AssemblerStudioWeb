@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -28,25 +28,25 @@
             <div class="vSpace"></div>
             
             <div class="hBox" id="statusregister">
-                <label class=   "title">Statusregister </label>
-                <label class="subtitle">Negative-Flag: </label><input type="checkbox" id="nFlag" class="oai">
-                <label class="subtitle">Zero-Flag:     </label><input type="checkbox" id="zFlag" class="oai">
-                <label class="subtitle">Overflow-Flag: </label><input type="checkbox" id="oFlag" class="oai">
+                <label class="title">Statusregister</label>
+                <label class="subtitle" for="nFlag">Negative-Flag: </label><input type="checkbox" id="nFlag" class="oai">
+                <label class="subtitle" for="zFlag">Zero-Flag:     </label><input type="checkbox" id="zFlag" class="oai">
+                <label class="subtitle" for="oFlag">Overflow-Flag: </label><input type="checkbox" id="oFlag" class="oai">
             </div>
             
             <div class="hBox" id="akkumulator">
-                <label class="title">Akkumulator</label>
+                <label class="title" for="akk">Akkumulator</label>
                 <input type="number" class="cell" id="akk" value="0">
             </div>
             
             <div class="vSpace"></div>
             
             <div class="hBox" id="befehlszähler">
-                <label class="title">Befehlszähler</label>
+                <label class="title" for="cnt">Befehlszähler</label>
                 <input type="number" class="cell" id="cnt" value="1">
             </div>
             <div class="hBox" id="befehlsregister">
-                <label class="title">Befehlsregister</label>
+                <label class="title" for="cmd">Befehlsregister</label>
                 <input type="text" class="cell" id="cmd">
             </div>
             
@@ -90,9 +90,11 @@
         <div class="vBox scroll" id="speicher">
             <table>
                 <thead>
-                    <th style="padding-right:0.5ch;" title="Speicheradresse">SA</th>
-                    <th>Zelle/Operator</th>
-                    <th>Zelle/Operand</th>
+                    <tr>
+                        <th style="padding-right:0.5ch;" title="Speicheradresse">SA</th>
+                        <th>Zelle/Operator</th>
+                        <th>Zelle/Operand</th>
+                    </tr>
                 </thead>
             </table>
             <a onclick="$storage.createTableRow(true)" class="button">Add Cells</a>
