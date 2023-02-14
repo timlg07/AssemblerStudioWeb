@@ -116,6 +116,7 @@ input[type='file']
     background: transparent;
     border: 2px solid #64DD17;
     padding:8px;
+    min-height: 3.5rem;
 }
 
 label
