@@ -36,7 +36,7 @@ class Speicherwerk {
      * @param {boolean} autoScroll Scrolls to the bottom if the user triggered
      *        the creation of a new table row.
      */
-    createTableRow(autoScroll) {
+    createTableRow(autoScroll = false) {
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         let cellIndex = this.speicherZellen.length + 1;
