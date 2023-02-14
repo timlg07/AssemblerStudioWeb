@@ -160,20 +160,17 @@ class Registermaschine {
                 this.jump();
                 break;
             case 'JUMPZ':
-                if( this.elements.flags.zero.checked ){ 
+                if( this.akkumulator == 0 ){
                     this.jump(); 
                 }
                 break;
             case 'JUMPN':
-                if( this.elements.flags.negative.checked ){ 
+                if( this.akkumulator < 0 ){
                     this.jump(); 
                 }
                 break;
             case 'JUMPP':
-                if( 
-                    !this.elements.flags.negative.checked &&
-                    !this.elements.flags.zero.checked
-                ){ 
+                if( this.akkumulator > 0 ){
                     this.jump(); 
                 }
                 break;
