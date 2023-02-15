@@ -22,17 +22,7 @@ function main() {
     // command description
     add_descriptions();
 
-    // welcome text
-    $console.log("Willkommen im AssemblerStudioWeb! Hier findest du hilfreiche Informationen und Anleitungen:");
-    $console.log("<a href=\"intro.html\">Einführung in die Assemblerprogrammierung und Anwendung im AssemblerStudioWeb</a>");
-    // $console.log("<a href=\"ie.jpg\">Warum wird Internet Explorer nicht unterstützt?</a><br><br>");
-
-    /* Hide Banner (for online 000webhost-version only)
-    try {
-        document.querySelector('img:last-child').style.display = "none";
-    } catch(e) {
-        // not necessary
-    }*/
+    // welcome text added in static HTML so google can crawl the link
 }
 
 /**
